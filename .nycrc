@@ -1,0 +1,14 @@
+{
+    "include": ["src/**/*.js","src/*.js"],
+    "exclude": [
+        "src/**/index.js"
+    ],
+    "extension": [".js"],
+    "reporter": ["lcov", "text", "html"],
+    "require": "@babel/register",
+    "instrument": true,
+    "sourceMaps": false,
+    "all": true,
+    "cache": false,
+    "all": true
+}

@@ -1,0 +1,41 @@
+{
+    "name": "lastfm-tss-cicd",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/index.js",
+    "scripts": {
+        "build": "babel src --out-dir dist",
+        "serve": "nodemon --exec babel-node src/index.js",
+        "MDhtml": "node md2html.js",
+        "test": "mocha --require @babel/register \"test/**/*.spec.js\"",
+        "start": "node dist/index.js",
+        "coverage": "cross-env NODE_ENV=test nyc npm run test -- --reporter landing --cache",
+        "report": "nyc report --root coverage --format html",
+        "lint": "eslint ./src --fix"
+    },
+    "author": "Seanitzel <seandvir12@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/cli": "^7.1.5",
+        "@babel/core": "^7.1.6",
+        "@babel/node": "^7.2.2",
+        "@babel/preset-env": "^7.1.6",
+        "@babel/register": "^7.0.0",
+        "@types/chai": "^4.1.7",
+        "@types/mocha": "^5.2.5",
+        "babel-eslint": "^10.0.1",
+        "babel-loader": "^8.0.4",
+        "chai": "^4.2.0",
+        "cross-env": "^5.2.0",
+        "eslint": "^5.15.3",
+        "fs-extra": "^7.0.1",
+        "mocha": "^5.2.0",
+        "nodemon": "^1.18.10",
+        "nyc": "^13.3.0",
+        "showdown": "^1.9.0"
+    },
+    "dependencies": {
+        "express": "^4.16.4",
+        "node-fetch": "^2.3.0"
+    }
+}
